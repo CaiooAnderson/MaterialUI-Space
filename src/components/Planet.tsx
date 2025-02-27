@@ -11,7 +11,7 @@ export default function Planet({ start, darkMode }: PlanetProps) {
   const [scale, setScale] = useState(2);
   const planetRef = useRef<THREE.Mesh>(null);
 
-  const logoTexture = useLoader(THREE.TextureLoader, "/src/assets/linea-logo.svg");
+  const logoTexture = useLoader(THREE.TextureLoader, "/assets/linea-logo.svg");
 
   const createGradientTexture = (isDarkMode: boolean) => {
     const size = 1024;

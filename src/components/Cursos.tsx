@@ -10,27 +10,27 @@ const cursos = [
   {
     titulo: 'Fundamentos de Programação com Python',
     descricao: 'Aprenda Python do básico ao avançado com foco em ciência de dados.',
-    imagem: '/src/assets/Python.gif',
+    imagem: '/assets/Python.gif',
   },
   {
     titulo: 'Versionamento de código: Git, GitHub e GitFlow',
     descricao: 'Entenda sobre a utilidade das ferramentas adotadas pela comunidade de desenvolvimento de software.',
-    imagem: '/src/assets/GitHub.gif',
+    imagem: '/assets/GitHub.gif',
   },
   {
     titulo: 'Desenvolvimento de Software Científico',
     descricao: 'Exercida para aprofundar o conhecimento em desenvolvimento de software científico.',
-    imagem: '/src/assets/Software.gif',
+    imagem: '/assets/Software.gif',
   },
   {
     titulo: 'Fundamentos de Banco de Dados',
     descricao: 'Introdução ao SQL, modelagem de dados e consultas otimizadas.',
-    imagem: '/src/assets/SQL.gif',
+    imagem: '/assets/SQL.gif',
   },
   {
     titulo: 'Jupyter Notebook',
     descricao: 'Aprendizagem sobre o Jupyter Notebook para análise e visualização de dados.',
-    imagem: '/src/assets/Jupyter.gif'
+    imagem: '/assets/Jupyter.gif'
   }
 ];
 
