@@ -98,7 +98,7 @@ export default function SpaceView() {
       )}
 
       {start && !showInfo && (
-        <Box sx={{ position: 'absolute', bottom: 20, left: '50%', transform: 'translateX(-50%)' }}>
+        <Box sx={{ position: 'absolute', bottom: 75, left: '50%', transform: 'translateX(-50%)' }}>
           <Button variant="contained" color="info" onClick={() => setShowInfo(true)}>
             Informações
           </Button>
