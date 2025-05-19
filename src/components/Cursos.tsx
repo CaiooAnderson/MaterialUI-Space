@@ -7,6 +7,8 @@ import {
   CardContent,
   CardMedia,
   Zoom,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -55,19 +57,22 @@ const cursosLinea: Course[] = [
 
 const cursosSysMap: Course[] = [
   {
-    titulo: "Introdução ao SysMap",
-    descricao: "Visão geral do sistema de mapeamento 3D espacial.",
-    imagem: "/assets/SysMapIntro.gif",
+    titulo: "Back End",
+    descricao:
+      "Conceitos de Arquitetura, DevOps e Containers, Boas Práticas e Cloud (IaaS, PaaS), Desenvolvimento Back end e APIs, Fila, Mensageria e Cache, Banco de Dados SQL e NoSQL e Desenvolvimento de Software.",
+    imagem: "/assets/backend.gif",
   },
   {
-    titulo: "Processamento de Imagens Espaciais",
-    descricao: "Técnicas de SLAM e AI aplicadas a mapas estelares.",
-    imagem: "/assets/SysMapProcessing.gif",
+    titulo: "Front End",
+    descricao:
+      "Desenvolvimento de interfaces responsivas, Desenvolvimento Web, Desenvolvimento Front end, Frameworks e Biblioteca de componentes, gerenciamento de estado, otimização de performance, acessibilidade, melhores práticas de UX/UI Design e Testes Unitários e de integração com Jest.",
+    imagem: "/assets/frontend.gif",
   },
   {
-    titulo: "Análise de Relevo em Asteroides",
-    descricao: "Como extrair e visualizar relevo usando SysMap.",
-    imagem: "/assets/SysMapRelief.gif",
+    titulo: "Mobile",
+    descricao:
+      "Criação de aplicativos, Multiplataforma com React Native, Integração com APIs REST, Otimização de performance, Desenvolvimento nativo e híbrido, Shops & Marketplaces, React Native e Mobile Analytics.",
+    imagem: "/assets/mobile.gif",
   },
 ];
 
@@ -82,6 +87,8 @@ export default function Cursos() {
   const [show, setShow] = useState(false);
   const [showCourses, setShowCourses] = useState(false);
   const [boxWidth, setBoxWidth] = useState("100vw");
+  const theme = useTheme();
+  const telasMenores = useMediaQuery(theme.breakpoints.down("sm"));
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -160,10 +167,19 @@ export default function Cursos() {
               alignItems: "center",
             }}
           >
-            <Typography variant="h3" color="text.primary" gutterBottom>
+            <Typography
+              variant={telasMenores ? "h4" : "h3"}
+              color="text.primary"
+              gutterBottom
+              sx={{ px: telasMenores ? 0.5 : 0 }}
+            >
               Bem-vindo à Sessão dos Cursos!
             </Typography>
-            <Typography variant="h5" color="text.secondary" sx={{ mb: 3 }}>
+            <Typography
+              variant={telasMenores ? "h6" : "h5"}
+              color="text.secondary"
+              sx={{ mb: telasMenores ? 0 : 3, px: telasMenores ? 2 : 0 }}
+            >
               Explore cursos que já realizei {selectedPlanet}. <SchoolIcon />
             </Typography>
           </Box>
@@ -181,76 +197,76 @@ export default function Cursos() {
       </Grow>
 
       {showCourses && (
-  <Box
-    sx={{
-      width: '100%',
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 2,
-      boxSizing: 'border-box',
-    }}
-  >
-    <Typography variant="h4" color="text.primary">
-      Cursos Feitos
-    </Typography>
-    <Box
-      sx={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: 2,
-        justifyContent: 'center',
-        alignItems: 'stretch',
-        width: '100%',
-        maxHeight: 'none',
-      }}
-    >
-      {cursosToShow.map((curso, index) => (
-        <Zoom in={showCourses} timeout={1500} key={index}>
-          <Card
+        <Box
+          sx={{
+            width: "100%",
+            minHeight: "100vh",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: 2,
+            boxSizing: "border-box",
+          }}
+        >
+          <Typography variant="h4" color="text.primary">
+            Cursos Feitos
+          </Typography>
+          <Box
             sx={{
-              maxWidth: 300,
-              flex: '1 1 300px',
-              textAlign: 'center',
-              display: 'flex',
-              flexDirection: 'column',
-              margin: '10px',
-              position: 'relative',
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 2,
+              justifyContent: "center",
+              alignItems: "stretch",
+              width: "100%",
+              maxHeight: "none",
             }}
           >
-            <CardMedia
-              component="img"
-              height="180"
-              image={curso.imagem}
-              alt={curso.titulo}
-              sx={{ objectFit: 'cover' }}
-            />
-            <CardContent
-              sx={{
-                flexGrow: 1,
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
-              <Typography variant="h6" color="text.primary" gutterBottom>
-                {curso.titulo}
-              </Typography>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                sx={{ flexGrow: 1 }}
-              >
-                {curso.descricao}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Zoom>
-      ))}
-    </Box>
-  </Box>
-)}
+            {cursosToShow.map((curso, index) => (
+              <Zoom in={showCourses} timeout={1500} key={index}>
+                <Card
+                  sx={{
+                    maxWidth: 300,
+                    flex: "1 1 300px",
+                    textAlign: "center",
+                    display: "flex",
+                    flexDirection: "column",
+                    margin: "10px",
+                    position: "relative",
+                  }}
+                >
+                  <CardMedia
+                    component="img"
+                    height="180"
+                    image={curso.imagem}
+                    alt={curso.titulo}
+                    sx={{ objectFit: "cover" }}
+                  />
+                  <CardContent
+                    sx={{
+                      flexGrow: 1,
+                      display: "flex",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <Typography variant="h6" color="text.primary" gutterBottom>
+                      {curso.titulo}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      sx={{ flexGrow: 1 }}
+                    >
+                      {curso.descricao}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Zoom>
+            ))}
+          </Box>
+        </Box>
+      )}
     </Box>
   );
 }
