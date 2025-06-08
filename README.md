@@ -1,50 +1,64 @@
-# React + TypeScript + Vite
+# 🌌 SpaceView
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**SpaceView** é uma aplicação interativa e visualmente imersiva que permite explorar o universo de forma dinâmica. Utilizando animações em 3D para mostrar diferentes ambientes por onde já passei (cursos/bootcamps) com **Three.js**, **React Three Fiber** e uma interface moderna e responsiva com **Material UI**.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **React** com **TypeScript**
+* **Vite** para bundling rápido
+* **Three.js** com **@react-three/fiber** e **@react-three/drei** para visualização 3D
+* **Material UI** para componentes modernos e responsivos
+* **Framer Motion** para animações fluidas
+* **React Router v7** para navegação entre rotas
+* **ESLint** e **TypeScript ESLint** para padronização de código
 
-## Expanding the ESLint configuration
+## 📦 Instalação
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone o repositório:
 
-- Configure the top-level `parserOptions` property like this:
+   ```bash
+   git clone https://github.com/CaiooAnderson/MaterialUI-Space.git
+   ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+2. Acesse o diretório do projeto:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+   ```bash
+   cd MaterialUI-Space
+   ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+3. Instale as dependências:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+   ```bash
+   npm install
+   ```
+
+## 🧪 Scripts Disponíveis
+
+`npm run dev`
+<br>
+Inicia o servidor de desenvolvimento
+
+`npm run build`
+<br>
+Compila o projeto para produção
+
+`npm run start`
+<br>
+Alias para **dev**
+
+## 🌠 Funcionalidades Principais
+
+* 🌍 Visualização de planetas em 3D com rotação e iluminação das estrelas
+* 🛰️ Interface imersiva com background animado de estrelas
+* 🔭 Botões interativos como **Iniciar**, **Informações**, **Cursos**
+* 💡 Suporte a temas Light/Dark
+* 📡 Transições entre telas com React Hooks, Router, Context.
+
+## 🗂️ Estrutura Inicial
+
+O projeto segue uma estrutura modular, com componentes organizados e lógica separada entre animações 3D e interface UI.
+
+## 📘 Requisitos
+
+* Node.js ^18+
+* Navegador moderno com suporte a WebGL
